@@ -1,12 +1,15 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.jaesma.util.Mappings" %>
+
 <html>
 <head>
-    <title>HOME PAGE</title>
+    <title>Todo List Application</title>
 </head>
 <body>
-    <h2>Welcome back to Spring Framework!</h2>
-    <hr>
-    <h3>Go learn some stuff!</h3>
-    <h3>${welcomeMessage}</h3>
-    <h3>${helloMessage}</h3>
+<div align="center">
+    <c:url var="itemsLink" value="${Mappings.ITEMS}"/>
+    <h2><a href="${itemsLink}">Show Todo Items</a></h2>
+</div>
+
 </body>
 </html>
