@@ -1,13 +1,16 @@
 package com.jaesma.controller;
 
 import com.jaesma.model.TodoData;
+import com.jaesma.model.TodoItem;
 import com.jaesma.service.TodoItemService;
+import com.jaesma.util.AttributeNames;
 import com.jaesma.util.Mappings;
 import com.jaesma.util.ViewNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class TodoItemController {
@@ -31,5 +34,10 @@ public class TodoItemController {
     @GetMapping(Mappings.ITEMS)
     public String items() {
         return ViewNames.ITEMS_LIST;
+    }
+
+    @PostMapping(Mappings.ADD_ITEM)
+    public String processItem(@ModelAttribute(AttributeNames.TODO_ITEM) TodoItem todoItem) {
+        return "redirect:/" + Mappings.ITEMS;
     }
 }
