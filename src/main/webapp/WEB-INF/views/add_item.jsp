@@ -15,7 +15,8 @@
 </head>
 <body>
     <div align="center">
-        <form:form method="POST">  <modelAttribute>${AttributeNames.TODO_ITEM}</modelAttribute>
+        <%--@elvariable id="${AttributeNames.TODO_ITEM}" type="com.jaesma.util"--%>
+        <form:form method="POST" modelAttribute="${AttributeNames.TODO_ITEM}"> 
             <table>
                 <tr>
                     <td><label>ID</label></td>
